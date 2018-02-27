@@ -1,4 +1,4 @@
-package com.sunilkumar.springboot.Spring_BOOT_REST;
+package com.sunilkumar.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
