@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @RequestMapping("/hello")
+    @RequestMapping("/")
     public String sayHi(){
-        return "Hi";
+        return "Hi this is simple <b>Sprint boot app</b>";
     }
 }
