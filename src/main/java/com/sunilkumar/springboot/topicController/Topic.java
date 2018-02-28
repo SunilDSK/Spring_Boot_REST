@@ -1,6 +1,12 @@
 package com.sunilkumar.springboot.topicController;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity // This makes the class as an entity
 public class Topic {
+
+    @Id // This is primary key
     private String id;
     private String name;
     private String description;
