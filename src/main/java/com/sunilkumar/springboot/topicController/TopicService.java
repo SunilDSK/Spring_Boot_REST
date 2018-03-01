@@ -36,7 +36,7 @@ public class TopicService {
 //        topics.add(topic);
     }
 
-    public void updateTopic(Topic topic, String id) {
+    public void updateTopic(Topic topic) {
 //        for (int i = 0; i < topics.size(); i++) {
 //            Topic t = topics.get(i);
 //            if (t.getId().equalsIgnoreCase(id)) {
@@ -44,16 +44,19 @@ public class TopicService {
 //                return;
 //            }
 //        }
-        topicRepository.save(topic);
+        topicRepository.save(topic); // This will update the topic,
+        // since topic object contains ID it will update the existing thing else it will add it
     }
 
     public void deleteTopic(String id) {
-        for (int i = 0; i < topics.size(); i++) {
-            Topic t = topics.get(i);
-            if (t.getId().equalsIgnoreCase(id)) {
-                topics.remove(i);
-                return;
-            }
-        }
+//        for (int i = 0; i < topics.size(); i++) {
+//            Topic t = topics.get(i);
+//            if (t.getId().equalsIgnoreCase(id)) {
+//                topics.remove(i);
+//                return;
+//            }
+//        }
+        topicRepository.delete(id);
+        // This will delete the topic based on topic ID
     }
 }
