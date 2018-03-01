@@ -22,27 +22,29 @@ public class TopicService {
     public List<Topic> getTopics() {
         // return topics;
         List<Topic> topics = new ArrayList<>();
-        topicRepository.findAll().forEach(topics::add);
+        topicRepository.findAll().forEach(topics::add); // This will get all the records from DB
         return topics;
     }
 
     public Topic getTopicByID(String id) {
-        return topics.stream().filter(topic -> topic.getId().equals(id)).findFirst().get();
+//        return topics.stream().filter(topic -> topic.getId().equals(id)).findFirst().get();
+        return topicRepository.findOne(id); // This will return the topic with specific ID
     }
 
     public void addTopic(Topic topic) {
-        topicRepository.save(topic);
+        topicRepository.save(topic); // This will save the topic object to DB
 //        topics.add(topic);
     }
 
     public void updateTopic(Topic topic, String id) {
-        for (int i = 0; i < topics.size(); i++) {
-            Topic t = topics.get(i);
-            if (t.getId().equalsIgnoreCase(id)) {
-                topics.set(i, topic);
-                return;
-            }
-        }
+//        for (int i = 0; i < topics.size(); i++) {
+//            Topic t = topics.get(i);
+//            if (t.getId().equalsIgnoreCase(id)) {
+//                topics.set(i, topic);
+//                return;
+//            }
+//        }
+        topicRepository.save(topic);
     }
 
     public void deleteTopic(String id) {
